@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/*
+/* 
 |--------------------------------------------------------------------------
 | Base Site URL
 |--------------------------------------------------------------------------
-|
+|  
 | URL to your CodeIgniter root. Typically this will be your base URL,
 | WITH a trailing slash:
 |
@@ -17,8 +17,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = '';
 
+
+
+$config['base_url'] = 'http://localhost/shughran';
+
+
+
+//$config['base_url'] = 'http://www.shughran.com';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -305,7 +311,7 @@ $config['cache_query_string'] = FALSE;
 | http://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = 'cc21dc35aa7939cb85a34cfdea734625';
+$config['encryption_key'] = 'Kjli5VF01kLQYzXxGhtdbrmWRU9JayoTA2ncp';
 
 /*
 |--------------------------------------------------------------------------
@@ -353,12 +359,12 @@ $config['encryption_key'] = 'cc21dc35aa7939cb85a34cfdea734625';
 |
 | Other session cookie settings are shared with the rest of the application,
 | except for 'cookie_prefix' and 'cookie_httponly', which are ignored here.
-|
+| 
 */
-$config['sess_driver'] = 'database';
+$config['sess_driver'] = 'files'; 
 $config['sess_cookie_name'] = 'sess';
-$config['sess_expiration'] = 7200;
-$config['sess_save_path'] = 'sessions';
+$config['sess_expiration'] = 3600;
+$config['sess_save_path'] = APPPATH . 'ci_sessions/'; 
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;
