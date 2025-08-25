@@ -1,0 +1,12 @@
+org_type
+organization_subtype_section   organization_subtype 
+is_attached_section is_attached
+
+district_section district
+thana_section upazila
+union_section  union
+
+ward_section  ward
+institution_parent_section  institution_parent_id
+sub_category_section  sub_category
+institution_section institutionlist

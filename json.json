@@ -1,0 +1,191 @@
+{
+  "prescription_info": {
+    "cc_info": [
+      {
+        "cc_title": "Abir",
+        "cc_duration": "5",
+        "cc_duration_type": "days",
+        "cc_note": "Bhalo thaken"
+      },
+      {
+        "cc_title": "Khan",
+        "cc_duration": "5",
+        "cc_duration_type": "weeks",
+        "cc_note": "no note"
+      }
+    ],
+    "examination_info": {  
+                            "observation": [
+                            {
+                                "examination_title": "Rest of the ant segment normal",
+                                "examination_note": "Good"
+                            },
+                            {
+                                "examination_title": "Heart Sound",
+                                "examination_note": "normal"
+                            }
+                            ],
+                            "general_examination": {
+
+                                "blood_pressure": {
+                                    "diastolic": "80",
+                                    "systolic": "120",
+                                    "unit": "mm"
+                                },                            
+                                "pulse": {
+                                    "value": "98",
+                                    "systolic": "",
+                                    "unit": "PM",
+                                     "pulse_type": "Regular"
+                                },
+                                "temperature": {
+                                    "value": "98",                                    
+                                    "unit": "C",
+                                     "temperature_comment": "Normal"
+                                },
+                                "pat_weight": {
+                                    "value": "97",                                    
+                                    "unit": "kg",
+                                     "show_in_prescription_flag": "Y"
+                                },
+                                "pat_height": {
+                                    "foot": "",   
+                                    "inch": "",  
+                                    "cm": "97",                            
+                                    "show_in_prescription_flag": "Y"
+                                },
+                                 "show_bsa": "Y",
+                                 "show_bmi": "Y",
+                                 "ideal_weight": {
+                                    "value": "",   
+                                    "unit": "kg"
+                                },
+                                "ideal_bmi": "" ,
+                                "extra_cal": "" ,
+                                "target_daily_cal": "" 
+
+                                
+                            }
+
+                        },
+
+
+    "diagnosis_info": [
+      {
+        "diagnosis_title": "Acute lymphoblastic leukemia",
+        "diagnosis_duration": "5",
+        "diagnosis_duration_type": "days",
+        "diagnosis_note": "Bhalo thaken"
+      },
+      {
+        "diagnosis_title": "Glanzmann Thrombocythemia",
+        "diagnosis_duration": "5",
+        "diagnosis_duration_type": "weeks",
+        "diagnosis_note": "no note"
+      }
+    ],
+    "advice_info": [
+      {
+        "advice_title": "অতিরিক্ত লবণ খাওয়া পরিহার করুন",
+        "advice_note": "Good"
+      },
+      {
+        "advice_title": "ধূমপান পরিহার করুন",
+        "advice_note": "normal"
+      }
+    ],
+    "follow_up_info": {
+      "follow_up_title": ["অতিরিক্ত লবণ খাওয়া পরিহার করুন","অতিরিক্ত লবণ খাওয়া পরিহার করুন","অতিরিক্ত লবণ খাওয়া পরিহার করুন"],
+      "follow_up_day":[10,"দিন"],
+      "follow_up_date":"yyyy-mm-dd"
+       
+      },
+      "appointment_info": [
+      {
+        "advice_title": "অতিরিক্ত লবণ খাওয়া পরিহার করুন",
+        "advice_note": "Good"
+      },
+      {
+        "advice_title": "ধূমপান পরিহার করুন",
+        "advice_note": "normal"
+      }
+    ],
+    "investigation_info": [
+        {
+            "id":"52",
+            "investigation_name":"CBC",
+            "investigation_note":"Khalki pete korben",
+            "investigation_value":"78 unit/mm"
+
+        },
+        {
+            "id":"96",
+            "investigation_name":"USG Abdomen",
+            "investigation_note":"",
+            "investigation_value":""
+
+        },
+        
+        {
+            "id":"80",
+            "investigation_name":"MRI KUB",
+            "investigation_note":"",
+            "investigation_value":""
+
+        }
+    ],
+    "rx_info": [
+        {
+          "id": "11435",
+          "route": "IV",
+          "remarks": "প্রয়োজনে ব্যবহার করবেন।||খাবার ৩০মিনিট অথবা ১ঘন্টা পূর্বে||",
+          "unit_type": "টি",
+          "rx_category": "Capsule",
+          "duration_type": "সপ্তাহ",
+          "quantity_type": "এম্পুল",
+          "duration_number": "১০",
+          "quantity_number": "১/৪",
+          "scheduleTab_fifth": "",
+          "scheduleTab_first": "৭",
+          "scheduleTab_forth": "",
+          "scheduleTab_sixth": "",
+          "scheduleTab_third": "৮",
+          "scheduleTab_second": "৭",
+          "scheduleInject_type": "বেলা",
+          "scheduleInject_number": "১০"
+        },
+        {
+          "id": "25",
+          "route": "IM",
+          "remarks": "খালি পেটে খাবেন||যতবার পাতলা পায়খানা হবে ততবার তত পরিমান||খালি পেটে খাবেন||",
+          "unit_type": "টি",
+          "rx_category": "",
+          "duration_type": "চলবে",
+          "quantity_type": "±২ unit",
+          "duration_number": "১৫",
+          "quantity_number": "34",
+          "scheduleTab_fifth": "",
+          "scheduleTab_first": "৮",
+          "scheduleTab_forth": "",
+          "scheduleTab_sixth": "",
+          "scheduleTab_third": "0",
+          "scheduleTab_second": "১০",
+          "scheduleInject_type": "ঘণ্টা পর পর",
+          "scheduleInject_number": "১৫"
+        }
+      ],
+       "first_name":"",
+       "middle_name":"",
+       "last_name":"",
+       "designation":"",
+       "mobile":"",
+       "gender":"Male, Female, Third",
+       "email":"",
+       "birth_date":"yyyy-mm-dd",
+       "blood_group":"A+",
+       "address":"A+",
+       "disease":""
+       
+
+    }
+}

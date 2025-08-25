@@ -1,0 +1,29 @@
+sessionyear    1,15,2
+studentlife     2 
+education
+subject    1,2
+district   2
+institution_type    1,15,2
+responsibility_id     10,9,14,11,1,8,2
+education_institution   
+prossion_target_id  2
+prossion_target_sub_it  2 
+
+
+current_profession    8
+education_qualification  8
+orgstatus_at_forum    8
+mobile   14,11,8
+email     11
+higher_education_institution   11
+type_higher_education           11
+foreign_country    14,11
+foreign_address    14
+type_of_profession 14
+is_forum    14,11
+opposition  10
+date_death  10,9
+myr_serial  10 
+how_death   9
+
+notes  => 1,15

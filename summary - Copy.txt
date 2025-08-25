@@ -1,0 +1,61 @@
+Manpower List
+
+SELECT sma_orgstatus.status_name , t1.*, sma_institution.institution_type AS type_name_child FROM 
+( SELECT sma_branches.id branch_id, sma_branches.code branch_code, sma_manpower.id AS manpower_id,`sessionyear`, `responsibility`,`studentlife`,`education`,`membercode`, associatecode,
+sma_manpower.`name` manpower_name,`member_oath_date`,  associate_oath_date, membercandidate_oath_date,
+ sma_district.`name`, sma_manpower.orgstatus_id,
+  sma_institution.`institution_type`,institution_type_child,`subject`,`prossion_target`,`prossion_target_sub`,`education_institution`,`mobile`
+ FROM `sma_manpower` 
+LEFT JOIN sma_responsibilities  ON sma_manpower.responsibility_id = `sma_responsibilities`.id
+LEFT JOIN sma_branches ON  sma_manpower.branch =  `sma_branches`.id
+LEFT JOIN sma_district ON  sma_manpower.district =  `sma_district`.id
+LEFT JOIN sma_institution ON  sma_manpower.institution_type =   `sma_institution`.id
+WHERE sma_manpower.orgstatus_id IN (12) ) t1
+LEFT JOIN sma_institution ON sma_institution.id = t1.institution_type_child
+LEFT JOIN `sma_orgstatus` ON sma_orgstatus.id = t1.orgstatus_id
+ORDER BY sma_orgstatus.status_name
+
+
+
+BM
+SELECT  branch_id,  `sma_branches`.code branch_code, SUM(CASE WHEN TYPE=1 THEN amount ELSE 0 END) Income 
+, SUM(CASE WHEN TYPE=2 THEN amount ELSE 0 END) Expense  FROM `sma_bm_record` 
+LEFT JOIN sma_bm_source ON `sma_bm_record`.source_id = sma_bm_source.id
+LEFT JOIN `sma_branches` ON `sma_bm_record`.branch_id = sma_branches.id
+WHERE DATE(`date`) BETWEEN '2020-12-23' AND '2021-12-16'
+GROUP BY branch_id, branch_code
+ORDER BY branch_id ASC
+
+
+
+training
+
+SELECT branch_id, SUM(CASE WHEN training_id=14 THEN `number` ELSE 0 END ) quran, SUM(CASE WHEN training_id=15 THEN `number` ELSE 0 END ) reading  FROM `sma_training_record` WHERE DATE(`date`) BETWEEN '2020-12-23' AND '2021-12-16'
+AND training_id IN (14,15) 
+GROUP BY branch_id  
+ORDER BY branch_id ASC
+
+
+
+
+Program
+SELECT branch_id, SUM(CASE WHEN program_id=22 THEN `number` ELSE 0 END ) general_assemble, 
+SUM(CASE WHEN program_id=12 THEN `number` ELSE 0 END ) meeting  FROM `sma_program_record` 
+WHERE DATE(`date`) BETWEEN '2020-12-23' AND '2021-12-16'
+AND `program_id` IN (12,22) 
+GROUP BY branch_id  
+ORDER BY branch_id ASC
+
+
+Manpower_prev
+SELECT branch_id, associate_candidate, `worker`, `supporter`, `friend`, `non_muslim_supporter`, `non_muslim_friend`,`wellwisher` FROM `sma_calculated_mapower` WHERE `calculated_year` = 2020 ORDER BY `branch_id` ASC
+
+
+Manpower_record (candidate & Worker)
+SELECT branch_id, `associate_candidate_improvement`, `associate_candidate_endstd`,`associate_candidate_arrival`,`associate_candidate_transfer`,`associate_candidate_cancel`,`associate_candidate_abroad_study`,`associate_candidate_abroad_job`,`associate_candidate_death`,`associate_candidate_martyr`,`associate_candidate_postpone`,`associate_candidate_demotion`,`worker_improvement`,`worker_arrival`,`worker_endstd`,`worker_transfer`,`worker_cancel`,`worker_abroad_study`,`worker_abroad_job`,`worker_death`,`worker_demotion` FROM `sma_manpower_record` WHERE DATE(`date`) BETWEEN '2020-12-23' AND '2021-12-16'
+GROUP BY branch_id ORDER BY branch_id ASC
+
+Asso Candidate decrease for improvement
+SELECT `branch`, COUNT(id) FROM `sma_associatelog` WHERE DATE(`process_date`) BETWEEN '2020-12-23' AND '2021-12-16'
+AND process_id = 2 AND in_out = 1 GROUP BY branch ORDER BY branch ASC
+

@@ -1,0 +1,56 @@
+1.  Member increase_decrease 
+
+ SELECT  (SUM(CASE in_out WHEN 1 THEN 1 WHEN 2 THEN 0 END)  - SUM(CASE in_out WHEN 1 THEN 0 WHEN 2 THEN 1 END) ) net_increase_member ,`branch`   
+     FROM  `sma_memberlog` 
+     
+     LEFT JOIN `sma_branches` ON `sma_branches`.id = sma_memberlog.branch
+     WHERE  `process_date` BETWEEN '2021-12-23' AND  '2022-12-25' GROUP BY branch ORDER BY `branch`  ASC;
+
+
+
+2.  Member Candidate increase_decrease 
+  SELECT a.net_increase_member_candidate , sma_branches.id  FROM sma_branches LEFT JOIN (SELECT  (SUM(CASE in_out WHEN 1 THEN 1 WHEN 2 THEN 0 END)  - SUM(CASE in_out WHEN 1 THEN 0 WHEN 2 THEN 1 END) ) net_increase_member_candidate ,branch  
+     FROM  sma_member_candidatelog  WHERE  `process_date` BETWEEN '2021-12-23' AND  '2022-12-25' GROUP BY branch
+     ) a    ON `sma_branches`.id = a.branch
+     ORDER BY sma_branches.id  ASC;
+
+
+
+
+3. Associate increase_decrease
+  SELECT a.net_increase_associate , sma_branches.id  FROM sma_branches LEFT JOIN (SELECT  (SUM(CASE in_out WHEN 1 THEN 1 WHEN 2 THEN 0 END)  - SUM(CASE in_out WHEN 1 THEN 0 WHEN 2 THEN 1 END) ) net_increase_associate ,branch  
+     FROM   `sma_associatelog`  WHERE  `process_date` BETWEEN '2021-12-23' AND  '2022-12-25' GROUP BY branch
+     ) a    ON `sma_branches`.id = a.branch
+     ORDER BY sma_branches.id  ASC;
+     
+
+4. Asso candidate
+    a.  Decrease=> Asso improvement
+    SELECT a.net_increase_associate , sma_branches.id  FROM sma_branches LEFT JOIN (SELECT  (SUM(CASE in_out WHEN 1 THEN 1 WHEN 2 THEN 0 END)  - SUM(CASE in_out WHEN 1 THEN 0 WHEN 2 THEN 1 END) ) net_increase_associate ,branch  
+     FROM   `sma_associatelog`  WHERE process_id = 2 AND in_out = 1 AND  `process_date` BETWEEN '2021-12-23' AND  '2022-12-25' GROUP BY branch
+     ) a    ON `sma_branches`.id = a.branch
+     ORDER BY sma_branches.id  ASC;     
+  
+  b. Decrease=>  other
+SELECT a.net , sma_branches.id  FROM sma_branches LEFT JOIN (
+SELECT SUM(associate_candidate_endstd+ associate_candidate_transfer
++ associate_candidate_cancel+ associate_candidate_abroad_study
++associate_candidate_abroad_job+associate_candidate_death+associate_candidate_martyr+associate_candidate_demotion) net , branch_id 
+FROM sma_manpower_record  WHERE DATE  BETWEEN '2021-12-23' AND  '2022-12-25'  GROUP BY branch_id 
+) a    ON `sma_branches`.id = a.branch_id
+     ORDER BY sma_branches.id  ASC;
+  
+  c. Improvement
+
+SELECT a.net , sma_branches.id  FROM sma_branches LEFT JOIN (
+SELECT SUM(associate_candidate_improvement+ associate_candidate_arrival) net , branch_id 
+FROM sma_manpower_record  WHERE DATE  BETWEEN '2021-12-23' AND  '2022-12-25'  GROUP BY branch_id 
+) a    ON `sma_branches`.id = a.branch_id
+     ORDER BY sma_branches.id  ASC;
+
+
+
+
+5.  Current worker
+select  `worker_current`('2021-12-23' ,  '2022-12-25',id,2021) current_worker,id from sma_branches order by id asc
+     

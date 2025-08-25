@@ -1,0 +1,257 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+ 
+  
+ 
+<link href="<?= $assets ?>plugins/xedit/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+    
+<div class="box">
+    <div class="box-header">
+        <h2 class="blue"><i
+                class="fa-fw fa fa-barcode"></i><?= 'বিশেষ কার্যক্রম' . ' (' . ($branch_id ? $branch->name : 'সকল শাখা') . ')'; ?>
+        </h2>
+
+        <div class="box-icon">
+            <ul class="btn-tasks">
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <i class="icon fa fa-tasks tip" data-placement="left" title="<?= lang("actions") ?>"></i>
+                    </a>
+                    <ul class="dropdown-menu pull-right tasks-menus" role="menu" aria-labelledby="dLabel">
+                      
+                         
+                        
+                        
+                    </ul>
+                </li>
+                <?php if (!empty($branches)) { ?>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon fa fa-building-o tip" data-placement="left" title="<?= "সকল শাখা" ?>"></i></a>
+                        <ul class="dropdown-menu pull-right tasks-menus" role="menu" aria-labelledby="dLabel">
+                            <li><a href="<?= admin_url('departmentsreport/bishesh-karjokrom') ?>"><i class="fa fa-building-o"></i> <?= "সকল শাখা" ?></a></li>
+                            <li class="divider"></li>
+                            <?php
+                            foreach ($branches as $branch) {
+                                echo '<li><a href="' . admin_url('departmentsreport/bishesh-karjokrom/' . $branch->id) . '"><i class="fa fa-building"></i>' . $branch->name . '</a></li>';
+                            }
+                            ?>
+                        </ul>
+                    </li>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
+    <div class="box-content">
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="introtext"><?php // lang('list_results'); ?></p>
+
+				 
+				
+				
+                <div class="table-responsive">
+				
+	
+				<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-izx2{border-color:black;background-color:#efefef;}
+.tg .tg-pwj7{background-color:#efefef;border-color:black;}
+.tg .tg-0pky{border-color:black;vertical-align:top}
+.tg .tg-y698{background-color:#efefef;border-color:black;vertical-align:top}
+.tg .tg-0lax{border-color:black;vertical-align:top}
+@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;}}
+
+.table-header-rotated {
+  border-collapse: collapse;
+}
+.table-header-rotated td {
+  width: 30px;
+}
+.no-csstransforms .table-header-rotated td {
+  padding: 5px 10px;
+}
+.table-header-rotated td {
+  text-align: center;
+  padding: 10px 5px;
+  border: 1px solid #ccc;
+}
+.table-header-rotated td.rotate {
+  height: 140px;
+  white-space: nowrap;
+}
+ .table-header-rotated td.rotate > div {
+  -webkit-transform: translate(10px, 51px) rotate(270deg);
+          transform: translate(10px, 51px) rotate(270deg);
+  width: 20px;
+}
+ .table-header-rotated td.rotate > div > span {
+   
+  padding: 5px 10px;
+}
+.table-header-rotated td.row-header {
+  padding: 0 10px;
+  border-bottom: 1px solid #ccc;
+}
+.table > tbody > tr > td {
+	border: 1px solid #ccc;
+}
+</style>
+                    <div class="tg-wrap">
+                        <table class="tg table table-header-rotated" id="testTable2">
+                        <td class="tg-pwj7" rowspan="3">বিবরণ</td>
+                   
+                                
+                                
+                   </tr>
+                   <tr>
+                       
+                       <td class="tg-pwj7" colspan="">সংখ্যা</td>
+                       <td class="tg-pwj7" colspan="">অংশগ্রহণ</td>
+                       <td class="tg-pwj7" colspan="">মেয়াদকাল</td>
+
+                       <td class="tg-pwj7" colspan="">বিবরণ  </td>
+                       <td class="tg-pwj7" colspan="">সংখ্যা </td>
+                       <td class="tg-pwj7" colspan="">অংশগ্রহণ</td>
+                       <td class="tg-pwj7" colspan="">মেয়াদকাল</td>
+
+
+                   </tr>
+                   <tr>
+                 
+                   </tr>
+
+
+
+
+                   <tr>
+                       <td class="tg-0pky  type_1">
+                       শিল্পী সংগ্রহ অভিযান 
+                       </td>
+                       <td class="tg-0pky  type_2">
+                       <?php echo $shsa_s = $total_bishes_karjokrom['shsa_s'] ?>
+                       </td>
+                       <td class="tg-0pky  type_3">
+                       <?php echo $shsa_og = $total_bishes_karjokrom['shsa_og'] ?>
+                       </td>
+                       <td class="tg-0pky  type_3">
+                       <?php echo $shsa_mk = $total_bishes_karjokrom['shsa_mk'] ?>
+                       </td>
+
+                       <td class="tg-0pky  type_1">
+                       বিক্রয় ও বিতরণ কার্যক্রম
+                        </td>
+                       <td class="tg-0pky  type_2">
+                       <?php echo $shsa_s = $total_bishes_karjokrom['stp_s'] ?>
+                       </td>
+                       <td class="tg-0pky  type_3">
+                       <?php echo $shsa_og = $total_bishes_karjokrom['stp_og'] ?>
+                       </td>
+                       <td class="tg-0pky  type_3">
+                       <?php echo $shsa_mk = $total_bishes_karjokrom['stp_mk'] ?>
+                       </td>
+
+
+                   </tr>
+                   <tr>
+                       <td class="tg-0pky  type_1">
+                       বিশেষ প্রতিযোগিতা
+                       </td>
+                       <td class="tg-0pky  type_2">
+                       <?php echo $shsa_s = $total_bishes_karjokrom['bbk_s'] ?>
+                       </td>
+                       <td class="tg-0pky  type_3">
+                       <?php echo $shsa_og = $total_bishes_karjokrom['bbk_og'] ?>
+                       </td>
+                       <td class="tg-0pky  type_3">
+                       <?php echo $shsa_mk = $total_bishes_karjokrom['bbk_mk'] ?>
+                       </td>
+
+                       <td class="tg-0pky  type_1">
+                       বৃক্ষরোপণ কর্মসূচী
+                       </td>
+                       <td class="tg-0pky  type_2">
+                       <?php echo $brks_s = $total_bishes_karjokrom['brks_s'] ?>
+                       </td>
+                       <td class="tg-0pky  type_3">
+                       <?php echo $brks_og = $total_bishes_karjokrom['brks_og'] ?>
+                       </td>
+                       <td class="tg-0pky  type_3">
+                       <?php echo $brks_mk = $total_bishes_karjokrom['brks_mk'] ?>
+                       </td>
+
+                    
+                   </tr>
+                   <td class="tg-0pky  type_1">
+                   কুইজ/সাধারণজ্ঞান প্রতিযোগিতা 
+                       </td>
+                       <td class="tg-0pky  type_2">
+                       <?php echo $shsa_s = $total_bishes_karjokrom['rdks_s'] ?>
+                       </td>
+                       <td class="tg-0pky  type_3">
+                       <?php echo $rdks_og = $total_bishes_karjokrom['rdks_og'] ?>
+                       </td>
+                       <td class="tg-0pky  type_3">
+                       <?php echo $rdks_mk = $total_bishes_karjokrom['rdks_mk'] ?>
+                       </td>
+
+                       <td class="tg-0pky  type_1">
+                       রক্তদান কর্মসূচী
+                       </td>
+                       <td class="tg-0pky  type_2">
+                       <?php echo $shsf_s = $total_bishes_karjokrom['shsf_s'] ?>
+                       </td>
+                       <td class="tg-0pky  type_3">
+                       <?php echo $shsf_og = $total_bishes_karjokrom['shsf_og'] ?>
+                       </td>
+                       <td class="tg-0pky  type_3">
+                       <?php echo $shsf_mk = $total_bishes_karjokrom['shsf_mk'] ?>
+                       </td>
+
+                    
+                   </tr>
+
+                   <tr>
+                   <td class="tg-0pky  type_1">
+                   রচনা/প্রবন্ধ প্রতিযোগিতা
+                       
+                     </td>
+                       <td class="tg-0pky  type_2">
+                       <?php echo $rpp_s = $total_bishes_karjokrom['rpp_s'] ?>
+                       </td>
+                       <td class="tg-0pky  type_3">
+                       <?php echo $rpp_og = $total_bishes_karjokrom['rpp_og'] ?>
+                       </td>
+                       <td class="tg-0pky  type_3">
+                       <?php echo $rpp_mk = $total_bishes_karjokrom['rpp_mk'] ?>
+                       </td>
+
+                       <td class="tg-0pky  type_1">
+                       শিক্ষা সফর 
+                       </td>
+                       <td class="tg-0pky  type_2">
+                       <?php echo $shsa_s = $total_bishes_karjokrom['shis_s'] ?>
+                       </td>
+                       <td class="tg-0pky  type_3">
+                       <?php echo $shis_og = $total_bishes_karjokrom['shis_og'] ?>
+                       </td>
+                       <td class="tg-0pky  type_3">
+                       <?php echo $shis_mk = $total_bishes_karjokrom['shis_mk'] ?>
+                       </td>
+
+                      
+                   </tr>
+               
+
+                        </table>
+                    </div>
+				
+				
+				
+		 
+			   </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
