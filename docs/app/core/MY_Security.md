@@ -1,3 +1,9 @@
+---
+layout: page
+title: MY_Security.php Documentation
+parent: Application Code Documentation
+---
+
 # MY_Security.php Documentation
 
 ## File Overview
