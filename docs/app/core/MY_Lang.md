@@ -1,3 +1,9 @@
+---
+layout: page
+title: MY_Lang.php Documentation
+parent: Application Code Documentation
+---
+
 # MY_Lang.php Documentation
 
 ## File Overview

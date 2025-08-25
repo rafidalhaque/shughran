@@ -1,3 +1,9 @@
+---
+layout: page
+title: index.php Documentation  
+parent: Root Files
+---
+
 # index.php Documentation
 
 ## File Overview

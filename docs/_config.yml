@@ -1,0 +1,55 @@
+# Jekyll configuration for Shughran Documentation
+title: "Shughran Documentation"
+description: "Comprehensive documentation for the Shughran organizational management system"
+baseurl: "/shughran"
+url: "https://rafidalhaque.github.io"
+
+# Theme
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Markdown processing
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Include/exclude files
+include:
+  - README.md
+  - index.md
+
+exclude:
+  - vendor/
+  - Gemfile*
+
+# Collections for organized documentation
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: "app"
+    values:
+      layout: "page"
+      nav_order: 3
+  - scope:
+      path: "user"  
+    values:
+      layout: "page"
+      nav_order: 2

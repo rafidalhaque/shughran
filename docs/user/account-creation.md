@@ -1,3 +1,10 @@
+---
+layout: page
+title: Account Creation Guide
+parent: User Guides
+nav_order: 1
+---
+
 # Account Creation Guide
 
 This guide explains how to create different types of user accounts in the Shughran application for organizational management.

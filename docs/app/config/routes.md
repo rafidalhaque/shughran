@@ -1,3 +1,9 @@
+---
+layout: page
+title: routes.php Documentation
+parent: Application Code Documentation
+---
+
 # routes.php Documentation
 
 ## File Overview
