@@ -1,3 +1,9 @@
+---
+layout: page
+title: Technical Documentation Index
+nav_order: 3
+---
+
 # Shughran Application Documentation Index
 
 ## Overview

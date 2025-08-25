@@ -1,3 +1,9 @@
+---
+layout: page
+title: Shughran Documentation
+nav_order: 1
+---
+
 # Shughran Documentation
 
 Welcome to the comprehensive documentation for the Shughran organizational management system. This documentation is hosted on GitHub Pages and provides detailed guides for both developers and end users.

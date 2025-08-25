@@ -1,3 +1,9 @@
+---
+layout: page
+title: MY_Controller.php Documentation
+parent: Application Code Documentation
+---
+
 # MY_Controller.php Documentation
 
 ## File Overview

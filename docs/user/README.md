@@ -1,3 +1,10 @@
+---
+layout: page
+title: User Guides
+nav_order: 2
+has_children: true
+---
+
 # User Guides
 
 This directory contains user-facing documentation for the Shughran organizational management system.

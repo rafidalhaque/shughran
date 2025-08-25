@@ -1,3 +1,9 @@
+---
+layout: page
+title: Format.php Documentation
+parent: Application Code Documentation
+---
+
 # Format.php Documentation
 
 ## File Overview
