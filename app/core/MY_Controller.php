@@ -8,6 +8,21 @@ class MY_Controller extends CI_Controller
         parent::__construct();
         $this->Settings = $this->site->get_setting();
 
+        // Handle case where no settings record exists
+        if (!$this->Settings) {
+            $this->Settings = new stdClass();
+        }
+
+        // Set default values for Settings properties if they don't exist
+        if (!isset($this->Settings->language)) {
+            $this->Settings->language = 'english';
+        }
+        if (!isset($this->Settings->rtl)) {
+            $this->Settings->rtl = 0;
+        }
+        if (!isset($this->Settings->theme)) {
+            $this->Settings->theme = 'default';
+        }
 
         if ($sma_language = $this->input->cookie('sma_language', TRUE)) {
             $this->config->set_item('language', $sma_language);
