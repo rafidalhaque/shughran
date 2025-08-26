@@ -83,13 +83,16 @@ class MY_Shop_Controller extends CI_Controller {
 
         } else {
             define("SHOP", 0);
+            $this->shop_settings = FALSE;
         }
 
         $this->customer = $this->warehouse = $this->customer_group = false;
         if ($this->session->userdata('company_id')) {
             $this->customer = $this->site->getCompanyByID($this->session->userdata('company_id'));
-            $this->customer_group = $this->shop_model->getCustomerGroup($this->customer->customer_group_id);
-        } elseif ($this->shop_settings->warehouse) {
+            if (SHOP && $this->shop_model) {
+                $this->customer_group = $this->shop_model->getCustomerGroup($this->customer->customer_group_id);
+            }
+        } elseif ($this->shop_settings && $this->shop_settings->warehouse) {
             $this->warehouse = $this->site->getWarehouseByID($this->shop_settings->warehouse);
         }
 
@@ -97,11 +100,13 @@ class MY_Shop_Controller extends CI_Controller {
         $this->v = strtolower($this->router->fetch_method());
         $this->data['m']= $this->m;
         $this->data['v'] = $this->v;
-        $this->Settings->indian_gst = FALSE;
-        if ($this->Settings->invoice_view > 0) {
-            $this->Settings->indian_gst = $this->Settings->invoice_view == 2 ? TRUE : FALSE;
-            $this->Settings->format_gst = TRUE;
-            $this->load->library('gst');
+        if ($this->Settings && is_object($this->Settings)) {
+            $this->Settings->indian_gst = FALSE;
+            if ($this->Settings->invoice_view > 0) {
+                $this->Settings->indian_gst = $this->Settings->invoice_view == 2 ? TRUE : FALSE;
+                $this->Settings->format_gst = TRUE;
+                $this->load->library('gst');
+            }
         }
 
     }
