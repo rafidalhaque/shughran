@@ -1,3 +1,9 @@
+---
+layout: page
+title: pagination_helper.php Documentation
+parent: Application Code Documentation
+---
+
 # pagination_helper.php Documentation
 
 ## File Overview

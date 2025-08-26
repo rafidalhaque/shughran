@@ -1,3 +1,9 @@
+---
+layout: page
+title: Notify.php Documentation
+parent: Application Code Documentation
+---
+
 # Notify.php Documentation
 
 ## File Overview

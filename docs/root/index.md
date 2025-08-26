@@ -1,7 +1,7 @@
 ---
 layout: page
 title: index.php Documentation  
-parent: Root Files
+parent: Root Files Documentation
 ---
 
 # index.php Documentation
