@@ -5,10 +5,14 @@ baseurl: "/shughran"
 url: "https://rafidalhaque.github.io"
 
 # Theme
-theme: minima
+theme: just-the-docs
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+
+# Just the Docs theme configuration
+search_enabled: true
+heading_anchors: true
 
 # Markdown processing
 markdown: kramdown
@@ -25,31 +29,10 @@ exclude:
   - vendor/
   - Gemfile*
 
-# Collections for organized documentation
-collections:
-  docs:
-    output: true
-    permalink: /:collection/:name/
-
 # Default front matter
 defaults:
   - scope:
       path: ""
       type: "pages"
     values:
-      layout: "page"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: "app"
-    values:
-      layout: "page"
-      nav_order: 3
-  - scope:
-      path: "user"  
-    values:
-      layout: "page"
-      nav_order: 2
+      layout: "default"
